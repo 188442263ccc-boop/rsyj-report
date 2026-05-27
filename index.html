@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>仁山眼镜回访审核日报</title>
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #6f746f;
+      --paper: #f7f5ef;
+      --panel: #ffffff;
+      --line: #dedbd1;
+      --green: #176b54;
+      --green-soft: #dcecdf;
+      --blue: #2358a8;
+      --blue-soft: #dce7f7;
+      --coral: #c95844;
+      --coral-soft: #f3dfd8;
+      --gold: #9a741f;
+      --gold-soft: #efe4bd;
+      --shadow: 0 18px 50px rgba(38, 36, 28, 0.12);
+      color-scheme: light;
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23, 107, 84, 0.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(23, 107, 84, 0.07) 1px, transparent 1px),
+        var(--paper);
+      background-size: 34px 34px;
+      color: var(--ink);
+    }
+
+    .shell {
+      width: min(1240px, calc(100vw - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      padding: 28px 0 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 54px);
+      line-height: 0.95;
+      letter-spacing: 0;
+      font-weight: 860;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .date-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    select {
+      min-width: 154px;
+      height: 40px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 6px;
+      color: var(--ink);
+      padding: 0 12px;
+      font-size: 14px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(310px, 0.95fr);
+      gap: 18px;
+      align-items: stretch;
+      padding: 14px 0 22px;
+    }
+
+    .report-panel,
+    .stat-strip,
+    .table-panel,
+    .story-panel {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .report-panel {
+      padding: clamp(22px, 3vw, 36px);
+      min-height: 360px;
+      display: grid;
+      align-content: space-between;
+      gap: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .report-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 9px;
+      background: linear-gradient(180deg, var(--green), var(--blue), var(--coral));
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .headline {
+      margin: 10px 0 0;
+      max-width: 760px;
+      font-size: clamp(25px, 3.2vw, 44px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 850;
+    }
+
+    .summary {
+      margin: 18px 0 0;
+      color: #444944;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .kpi {
+      padding: 18px;
+      min-height: 112px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .kpi strong {
+      display: block;
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 0.95;
+      letter-spacing: 0;
+      font-weight: 870;
+    }
+
+    .kpi span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      margin-bottom: 22px;
+      background: var(--line);
+    }
+
+    .strip-item {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    .strip-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .strip-item strong {
+      display: block;
+      margin-top: 8px;
+      font-size: clamp(24px, 2.8vw, 38px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin: 26px 0 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .store-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 236px;
+      box-shadow: 0 10px 30px rgba(38, 36, 28, 0.08);
+    }
+
+    .store-card h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .store-total {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .store-total strong {
+      font-size: 40px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .store-total span,
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .bar {
+      height: 10px;
+      background: #ece8dd;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 14px 0 6px;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      width: var(--value);
+      background: linear-gradient(90deg, var(--green), var(--blue));
+      border-radius: inherit;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pill.warn {
+      background: var(--gold-soft);
+      color: var(--gold);
+    }
+
+    .table-panel {
+      padding: 0;
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      background: rgba(247, 245, 239, 0.92);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    td strong {
+      display: block;
+      line-height: 1.35;
+    }
+
+    .score {
+      font-variant-numeric: tabular-nums;
+      font-weight: 820;
+    }
+
+    .story-panel {
+      padding: 22px;
+      margin: 0 0 38px;
+    }
+
+    .story-panel p {
+      margin: 0 0 14px;
+      color: #3e433e;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 20px;
+    }
+
+    .date-chip {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .date-chip.active {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    footer {
+      padding: 22px 0 36px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .topbar,
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .date-control {
+        justify-content: space-between;
+      }
+
+      .store-grid,
+      .stat-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .shell {
+        width: min(100vw - 24px, 1240px);
+      }
+
+      .kpis,
+      .store-grid,
+      .stat-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .hint {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <img class="brand-mark" src="https://rsyj.zsf08.cn/addons/qilu_rsyj/icon.jpg" alt="仁山眼镜">
+        <div>
+          <h1>回访审核日报</h1>
+          <div class="subtitle">仁山眼镜 · 四店回访质量与审核进度</div>
+        </div>
+      </div>
+      <div class="date-control">
+        <span class="pill" id="statusPill">已更新</span>
+        <select id="reportSelect" aria-label="选择日报日期"></select>
+      </div>
+    </header>
+
+    <section class="hero">
+      <article class="report-panel">
+        <div>
+          <div class="eyebrow" id="reportDate">Daily Review</div>
+          <div class="headline" id="reportHeadline"></div>
+          <p class="summary" id="reportSummary"></p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </article>
+      <aside class="kpis" id="kpis"></aside>
+    </section>
+
+    <section class="stat-strip" id="statStrip"></section>
+
+    <div class="section-title">
+      <h2>门店统计</h2>
+      <div class="hint">图文率 = 同时有文字备注和回访图片的订单占比</div>
+    </div>
+    <section class="store-grid" id="storeGrid"></section>
+
+    <div class="section-title">
+      <h2>员工表现</h2>
+      <div class="hint">按门店和员工汇总，便于每日复盘</div>
+    </div>
+    <section class="table-panel">
+      <table>
+        <thead>
+          <tr>
+            <th>门店</th>
+            <th>员工</th>
+            <th>处理订单</th>
+            <th>图文齐全</th>
+            <th>仅图片</th>
+            <th>仅文字</th>
+            <th>跳过</th>
+            <th>表现判断</th>
+          </tr>
+        </thead>
+        <tbody id="employeeRows"></tbody>
+      </table>
+    </section>
+
+    <div class="section-title">
+      <h2>日报正文</h2>
+      <div class="hint" id="updatedAt"></div>
+    </div>
+    <section class="story-panel" id="storyPanel"></section>
+
+  </main>
+
+  <script id="report-data">
+    // Daily automation updates this REPORTS array. Newest report should stay first.
+    const REPORTS = [
+      {
+        date: "2026-05-27",
+        updatedAt: "2026-05-27 12:10",
+        headline: "四家门店已完成回访订单全部审核完毕，基础留痕完整，文字备注质量存在明显员工差异。",
+        summary: "本日覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店。共审核 358 条已完成订单，全部符合“有回访内容或回访图片即审核为一般”的规则；未发现文字和图片均为空的订单，已完成列表回查剩余为 0。",
+        totals: {
+          stores: 4,
+          orders: 358,
+          auditedGeneral: 358,
+          skipped: 0,
+          remaining: 0,
+          withText: 166,
+          withImages: 358,
+          both: 166,
+          imageOnly: 192,
+          textOnly: 0
+        },
+        stores: [
+          {
+            name: "重庆星光68店",
+            total: 178,
+            auditedGeneral: 178,
+            skipped: 0,
+            withText: 51,
+            withImages: 178,
+            both: 51,
+            imageOnly: 127,
+            textOnly: 0,
+            employees: [
+              { name: "Liuyan", total: 71, auditedGeneral: 71, both: 4, imageOnly: 67, textOnly: 0, skipped: 0, note: "图片留痕充分，文字说明偏少。" },
+              { name: "Xuyanting", total: 46, auditedGeneral: 46, both: 2, imageOnly: 44, textOnly: 0, skipped: 0, note: "完成度达标，备注比例偏低。" },
+              { name: "ZhengWW", total: 55, auditedGeneral: 55, both: 39, imageOnly: 16, textOnly: 0, skipped: 0, note: "图文结合较好，复盘价值高。" },
+              { name: "WangYiFeng", total: 6, auditedGeneral: 6, both: 6, imageOnly: 0, textOnly: 0, skipped: 0, note: "样本少，但记录完整度最好。" }
+            ]
+          },
+          {
+            name: "深圳万象天地店",
+            total: 77,
+            auditedGeneral: 77,
+            skipped: 0,
+            withText: 52,
+            withImages: 77,
+            both: 52,
+            imageOnly: 25,
+            textOnly: 0,
+            employees: [
+              { name: "ZhangShengLin", total: 37, auditedGeneral: 37, both: 37, imageOnly: 0, textOnly: 0, skipped: 0, note: "全部图文齐全，记录质量稳定。" },
+              { name: "ZhengPeiShan", total: 39, auditedGeneral: 39, both: 14, imageOnly: 25, textOnly: 0, skipped: 0, note: "图片完整，文字备注仍可加强。" },
+              { name: "HongWeiPeng", total: 1, auditedGeneral: 1, both: 1, imageOnly: 0, textOnly: 0, skipped: 0, note: "单条记录规范。" }
+            ]
+          },
+          {
+            name: "成都银泰",
+            total: 94,
+            auditedGeneral: 94,
+            skipped: 0,
+            withText: 60,
+            withImages: 94,
+            both: 60,
+            imageOnly: 34,
+            textOnly: 0,
+            employees: [
+              { name: "Emliy 李", total: 20, auditedGeneral: 20, both: 20, imageOnly: 0, textOnly: 0, skipped: 0, note: "全部图文齐全，说明清楚。" },
+              { name: "Wuyingqi", total: 32, auditedGeneral: 32, both: 32, imageOnly: 0, textOnly: 0, skipped: 0, note: "备注能体现跟进结果，质量较高。" },
+              { name: "Whitney王", total: 42, auditedGeneral: 42, both: 8, imageOnly: 34, textOnly: 0, skipped: 0, note: "图片留痕充分，建议补充简短结论。" }
+            ]
+          },
+          {
+            name: "北京中关村店",
+            total: 9,
+            auditedGeneral: 9,
+            skipped: 0,
+            withText: 3,
+            withImages: 9,
+            both: 3,
+            imageOnly: 6,
+            textOnly: 0,
+            employees: [
+              { name: "Xiejs", total: 9, auditedGeneral: 9, both: 3, imageOnly: 6, textOnly: 0, skipped: 0, note: "整体完成达标，文字备注比例可提升。" }
+            ]
+          }
+        ],
+        story: [
+          "本次审核覆盖四家门店的已完成订单，按照“回访内容有文字备注或回访图片有图片即审核为一般”的标准执行。四家店共 358 条记录全部完成审核，未发现文字备注和回访图片同时为空的订单，说明基础回访动作和留痕意识整体到位。",
+          "从门店看，重庆星光68店数量最多，共 178 条，全部有图片，但图文齐全订单为 51 条，仍有 127 条主要依靠图片证明完成。深圳万象天地店 77 条中 52 条图文齐全，整体文字记录比例较好。成都银泰 94 条中 60 条图文齐全，员工间差异较清晰。北京中关村店样本较少，共 9 条，全部有图，3 条图文齐全。",
+          "从员工看，ZhangShengLin、Emliy 李、Wuyingqi、WangYiFeng 的记录质量更好，图文齐全率高，便于后续复盘顾客状态和服务进度。Liuyan、Xuyanting、Whitney王、ZhengPeiShan、Xiejs 的图片留痕完整，但文字备注比例偏低，建议后续每条回访补充一句简短结论，例如顾客是否满意、是否未回复、是否需要二次跟进、订单是否仅为出库或调货。",
+          "总体判断：今日回访审核工作已完成，执行层面没有空记录遗留；管理层面建议把“有图片”作为底线，把“图片加一句结论”作为日常标准，这样日报不仅能证明做了，也能看出每位员工做得是否清楚、有效、可追踪。"
+        ]
+      }
+    ];
+  </script>
+
+  <script>
+    const fmt = new Intl.NumberFormat("zh-CN");
+    const select = document.getElementById("reportSelect");
+    const timeline = document.getElementById("timeline");
+
+    function pct(part, total) {
+      if (!total) return 0;
+      return Math.round((part / total) * 100);
+    }
+
+    function labelForEmployee(emp) {
+      const completeRate = pct(emp.both, emp.total);
+      if (emp.skipped > 0) return ["需复核", "warn"];
+      if (completeRate >= 80) return ["记录优秀", ""];
+      if (completeRate >= 45) return ["完成较好", ""];
+      return ["备注偏少", "warn"];
+    }
+
+    function render(report) {
+      document.getElementById("reportDate").textContent = `${report.date} · Daily Review`;
+      document.getElementById("reportHeadline").textContent = report.headline;
+      document.getElementById("reportSummary").textContent = report.summary;
+      document.getElementById("updatedAt").textContent = `更新时间：${report.updatedAt}`;
+      document.getElementById("statusPill").textContent = report.totals.remaining === 0 ? "已清零" : "有剩余";
+      document.getElementById("statusPill").className = report.totals.remaining === 0 ? "pill" : "pill warn";
+
+      const kpiData = [
+        ["审核订单", report.totals.auditedGeneral, "已按规则审核为一般"],
+        ["剩余未审", report.totals.remaining, "四店已完成列表回查"],
+        ["图文齐全", report.totals.both, `${pct(report.totals.both, report.totals.orders)}%`],
+        ["仅图片", report.totals.imageOnly, "有图但无文字备注"]
+      ];
+      document.getElementById("kpis").innerHTML = kpiData.map(([label, value, sub]) => `
+        <div class="kpi">
+          <strong>${fmt.format(value)}</strong>
+          <span>${label} · ${sub}</span>
+        </div>
+      `).join("");
+
+      const stripData = [
+        ["门店数", report.totals.stores],
+        ["总订单", report.totals.orders],
+        ["有文字备注", report.totals.withText],
+        ["有图片", report.totals.withImages]
+      ];
+      document.getElementById("statStrip").innerHTML = stripData.map(([label, value]) => `
+        <div class="strip-item"><span>${label}</span><strong>${fmt.format(value)}</strong></div>
+      `).join("");
+
+      document.getElementById("storeGrid").innerHTML = report.stores.map(store => {
+        const completeRate = pct(store.both, store.total);
+        return `
+          <article class="store-card">
+            <h3>${store.name}</h3>
+            <div class="store-total"><strong>${fmt.format(store.total)}</strong><span>条订单</span></div>
+            <div class="bar" aria-hidden="true"><i style="--value:${completeRate}%"></i></div>
+            <div class="metric-label">图文齐全率 ${completeRate}%</div>
+            <div class="metric-row"><span>已审一般</span><strong>${fmt.format(store.auditedGeneral)}</strong></div>
+            <div class="metric-row"><span>仅图片</span><strong>${fmt.format(store.imageOnly)}</strong></div>
+            <div class="metric-row"><span>跳过</span><strong>${fmt.format(store.skipped)}</strong></div>
+          </article>
+        `;
+      }).join("");
+
+      const employees = report.stores.flatMap(store =>
+        store.employees.map(emp => ({ store: store.name, ...emp }))
+      );
+      document.getElementById("employeeRows").innerHTML = employees.map(emp => {
+        const [label, tone] = labelForEmployee(emp);
+        return `
+          <tr>
+            <td>${emp.store}</td>
+            <td><strong>${emp.name}</strong><span class="metric-label">${emp.note}</span></td>
+            <td class="score">${fmt.format(emp.total)}</td>
+            <td class="score">${fmt.format(emp.both)} · ${pct(emp.both, emp.total)}%</td>
+            <td class="score">${fmt.format(emp.imageOnly)}</td>
+            <td class="score">${fmt.format(emp.textOnly)}</td>
+            <td class="score">${fmt.format(emp.skipped)}</td>
+            <td><span class="pill ${tone}">${label}</span></td>
+          </tr>
+        `;
+      }).join("");
+
+      document.getElementById("storyPanel").innerHTML = report.story.map(p => `<p>${p}</p>`).join("");
+    }
+
+    function setReport(index) {
+      select.value = String(index);
+      [...timeline.children].forEach((el, idx) => el.classList.toggle("active", idx === index));
+      render(REPORTS[index]);
+    }
+
+    REPORTS.forEach((report, index) => {
+      const option = document.createElement("option");
+      option.value = String(index);
+      option.textContent = report.date;
+      select.appendChild(option);
+
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "date-chip";
+      chip.textContent = report.date;
+      chip.addEventListener("click", () => setReport(index));
+      timeline.appendChild(chip);
+    });
+
+    select.addEventListener("change", event => setReport(Number(event.target.value)));
+    setReport(0);
+  </script>
+</body>
+</html>
