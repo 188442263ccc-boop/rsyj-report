@@ -512,6 +512,90 @@
     // Daily automation updates this REPORTS array. Newest report should stay first.
     const REPORTS = [
       {
+        date: "2026-05-28",
+        updatedAt: "2026-05-28 09:34",
+        headline: "今日四店已完成未审订单全部清零，重庆星光68店和北京中关村店产生实际审核量，其余两店暂无待审记录。",
+        summary: "本日覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店。共处理 22 条已完成未审核订单，全部因有回访图片或文字备注而审核为一般；未发现文字和图片均为空的订单，四店回查剩余未审数为 0。",
+        totals: {
+          stores: 4,
+          orders: 22,
+          auditedGeneral: 22,
+          skipped: 0,
+          remaining: 0,
+          withText: 11,
+          withImages: 22,
+          both: 11,
+          imageOnly: 11,
+          textOnly: 0
+        },
+        stores: [
+          {
+            name: "重庆星光68店",
+            total: 15,
+            auditedGeneral: 15,
+            skipped: 0,
+            withText: 5,
+            withImages: 15,
+            both: 5,
+            imageOnly: 10,
+            textOnly: 0,
+            employees: [
+              { name: "Xuyanting", total: 14, auditedGeneral: 14, both: 5, imageOnly: 9, textOnly: 0, skipped: 0, note: "审核量集中，图片留痕完整，文字备注占比约三成，建议继续补充简短回访结论。" },
+              { name: "ZhengWW", total: 1, auditedGeneral: 1, both: 0, imageOnly: 1, textOnly: 0, skipped: 0, note: "单条记录有图片留痕，缺少文字备注。" }
+            ]
+          },
+          {
+            name: "深圳万象天地店",
+            total: 0,
+            auditedGeneral: 0,
+            skipped: 0,
+            withText: 0,
+            withImages: 0,
+            both: 0,
+            imageOnly: 0,
+            textOnly: 0,
+            employees: [
+              { name: "暂无待审员工", total: 0, auditedGeneral: 0, both: 0, imageOnly: 0, textOnly: 0, skipped: 0, note: "今日已完成未审订单为 0，回查无遗留。" }
+            ]
+          },
+          {
+            name: "成都银泰",
+            total: 0,
+            auditedGeneral: 0,
+            skipped: 0,
+            withText: 0,
+            withImages: 0,
+            both: 0,
+            imageOnly: 0,
+            textOnly: 0,
+            employees: [
+              { name: "暂无待审员工", total: 0, auditedGeneral: 0, both: 0, imageOnly: 0, textOnly: 0, skipped: 0, note: "今日已完成未审订单为 0，回查无遗留。" }
+            ]
+          },
+          {
+            name: "北京中关村店",
+            total: 7,
+            auditedGeneral: 7,
+            skipped: 0,
+            withText: 6,
+            withImages: 7,
+            both: 6,
+            imageOnly: 1,
+            textOnly: 0,
+            employees: [
+              { name: "Chenlx", total: 5, auditedGeneral: 5, both: 4, imageOnly: 1, textOnly: 0, skipped: 0, note: "记录质量较好，绝大多数订单图文齐全，仅 1 条只有图片。" },
+              { name: "Xiejs", total: 2, auditedGeneral: 2, both: 2, imageOnly: 0, textOnly: 0, skipped: 0, note: "两条记录均图文齐全，完成质量稳定。" }
+            ]
+          }
+        ],
+        story: [
+          "本次审核覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店四家门店，按照既定规则逐条打开已完成且未审核订单详情：回访内容有文字备注，或回访图片有图片，任一项存在即审核为一般；两项都没有则跳过。今日共处理 22 条订单，全部符合审核为一般的条件，跳过 0 条。",
+          "从门店看，重庆星光68店是今日主要审核来源，共 15 条，全部有回访图片，其中 5 条图文齐全、10 条仅图片。图片留痕整体完整，但文字备注仍有提升空间，建议在图片之外补充一句顾客反馈或跟进结论。北京中关村店共 7 条，全部有图片，其中 6 条图文齐全，整体记录质量较好。深圳万象天地店和成都银泰今日已完成未审订单均为 0，回查没有遗留。",
+          "从员工看，重庆星光68店 Xuyanting 处理 14 条，是今日量最大的员工，所有订单都有图片，5 条带文字备注，说明基础动作完成稳定，但文字说明比例偏低。ZhengWW 今日 1 条有图片但无文字，可在后续补充简短描述。北京中关村店 Chenlx 处理 5 条，其中 4 条图文齐全，表现较好；Xiejs 处理 2 条且全部图文齐全，记录完整度稳定。",
+          "总体判断：今日四店已完成未审核订单已经全部清零，未发现空回访记录。管理建议继续把“有图”作为最低标准，把“图片加一句结论”作为优秀标准，尤其是重庆星光68店当前订单量集中，若能提升文字备注比例，后续复盘顾客状态、服务效果和二次跟进会更清楚。"
+        ]
+      },
+      {
         date: "2026-05-27",
         updatedAt: "2026-05-27 12:10",
         headline: "四家门店已完成回访订单全部审核完毕，基础留痕完整，文字备注质量存在明显员工差异。",
@@ -614,6 +698,7 @@
     }
 
     function labelForEmployee(emp) {
+      if (!emp.total) return ["无待审", ""];
       const completeRate = pct(emp.both, emp.total);
       if (emp.skipped > 0) return ["需复核", "warn"];
       if (completeRate >= 80) return ["记录优秀", ""];
