@@ -519,6 +519,96 @@
     // Daily automation updates this REPORTS array. Newest report should stay first.
     const REPORTS = [
       {
+        date: "2026-06-02",
+        updatedAt: "2026-06-02 09:06",
+        headline: "今日四店 38 条已完成未审订单全部清零，35 条通过图片确认存在主动回访。",
+        summary: "本日覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店。共处理 38 条已完成未审核订单，全部因回访内容有文字备注或回访图片有图片而审核为一般；未发现文字和图片均为空的订单，四店回查剩余未审数为 0。按回访图片判定，主动询问佩戴舒适度、调整需求、佩戴问题处理，或主动报告加工、到货、质检进度的订单为 35 条，占 92.1%。",
+        totals: {
+          stores: 4,
+          orders: 38,
+          auditedGeneral: 38,
+          skipped: 0,
+          remaining: 0,
+          withText: 26,
+          withImages: 38,
+          both: 26,
+          imageOnly: 12,
+          textOnly: 0,
+          activeFollowups: 35
+        },
+        stores: [
+          {
+            name: "重庆星光68店",
+            total: 25,
+            auditedGeneral: 25,
+            skipped: 0,
+            withText: 13,
+            withImages: 25,
+            both: 13,
+            imageOnly: 12,
+            textOnly: 0,
+            activeFollowups: 24,
+            employees: [
+              { name: "Xuyanting", total: 13, auditedGeneral: 13, both: 4, imageOnly: 9, textOnly: 0, activeFollowups: 12, skipped: 0, note: "主动回访 12 条，占 92.3%；多数能主动询问调整需求、佩戴感受或报告加工进度，但 9 条仅图片，建议补充文字结论。" },
+              { name: "Liuyan", total: 12, auditedGeneral: 12, both: 9, imageOnly: 3, textOnly: 0, activeFollowups: 12, skipped: 0, note: "12 条全部计入主动回访，主动回访率 100%；既能做定期佩戴关怀，也能主动同步镜框、加工和质检进度。" }
+            ]
+          },
+          {
+            name: "深圳万象天地店",
+            total: 0,
+            auditedGeneral: 0,
+            skipped: 0,
+            withText: 0,
+            withImages: 0,
+            both: 0,
+            imageOnly: 0,
+            textOnly: 0,
+            activeFollowups: 0,
+            employees: [
+              { name: "暂无待审员工", total: 0, auditedGeneral: 0, both: 0, imageOnly: 0, textOnly: 0, activeFollowups: 0, skipped: 0, note: "今日已完成未审订单为 0，回查无遗留。" }
+            ]
+          },
+          {
+            name: "成都银泰",
+            total: 4,
+            auditedGeneral: 4,
+            skipped: 0,
+            withText: 4,
+            withImages: 4,
+            both: 4,
+            imageOnly: 0,
+            textOnly: 0,
+            activeFollowups: 3,
+            employees: [
+              { name: "Emliy 李", total: 3, auditedGeneral: 3, both: 3, imageOnly: 0, textOnly: 0, activeFollowups: 2, skipped: 0, note: "3 条图文齐全，主动回访 2 条，占 66.7%；主动报加工和检查进度执行较好，1 条为顾客主动询问到货时间。" },
+              { name: "Wuyingqi", total: 1, auditedGeneral: 1, both: 1, imageOnly: 0, textOnly: 0, activeFollowups: 1, skipped: 0, note: "单条记录图文齐全，并主动报告镜片到加工室、寄出和到店检查进度，主动回访率 100%。" }
+            ]
+          },
+          {
+            name: "北京中关村店",
+            total: 9,
+            auditedGeneral: 9,
+            skipped: 0,
+            withText: 9,
+            withImages: 9,
+            both: 9,
+            imageOnly: 0,
+            textOnly: 0,
+            activeFollowups: 8,
+            employees: [
+              { name: "Chenlx", total: 9, auditedGeneral: 9, both: 9, imageOnly: 0, textOnly: 0, activeFollowups: 8, skipped: 0, note: "9 条全部图文齐全，主动回访 8 条，占 88.9%；主动报定制、加工、质检进度和佩戴适应情况较明确。" }
+            ]
+          }
+        ],
+        story: [
+          "本次审核继续覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店四家门店。按照规则逐条打开已完成且未审核订单详情，只要回访内容有文字备注，或回访图片有图片，即审核为一般；若两项都没有则跳过。今日共处理 38 条订单，38 条均有回访图片或文字备注并审核为一般，跳过 0 条，系统回查四店剩余未审数为 0。",
+          "基础留痕方面，今天 38 条订单全部有回访图片，其中 26 条同时有文字备注和图片，12 条仅有图片没有文字备注，未出现只有文字没有图片的记录。整体凭证上传完整，空白回访为 0；需要注意的是重庆星光68店今日有 12 条仅图片记录，虽然可以审核通过，但建议员工在上传截图后补一句顾客反馈、进度结论或后续动作，便于老板快速判断回访质量。",
+          "主动回访方面，按新口径把主动询问佩戴体验、处理佩戴问题，以及主动报告加工、到货、质检进度都纳入统计后，今日 35 条能从图片明确看到员工主动发起服务跟进，主动回访率为 92.1%。未计入主动回访的 3 条，主要是顾客主动咨询、普通验光预约或服务道歉类沟通，虽然有服务记录，但没有明确体现佩戴体验追问或加工进度主动同步。",
+          "从门店看，重庆星光68店今日承担主要审核量，共 25 条，主动回访 24 条，占 96.0%，表现最突出；Liuyan 12 条全部主动，Xuyanting 13 条中 12 条主动，能看到员工围绕佩戴调整、镜片保养、配件更换、镜框到货和质检进度做持续跟进。北京中关村店共 9 条，主动回访 8 条，占 88.9%，Chenlx 对定制、加工、质检和取镜安排的进度同步较清楚，同时也能追问新眼镜清晰度和适应情况。成都银泰共 4 条，主动回访 3 条，占 75.0%，主要集中在加工进度同步；深圳万象天地店今日无新增已完成未审订单。",
+          "从员工看，Liuyan 今日主动回访率 100%，数量和质量都很稳，建议继续保持定期关怀和进度同步的节奏。Xuyanting 主动回访率 92.3%，主动动作到位，但仅图片记录偏多，是今天最需要补文字备注的员工。Chenlx 主动回访率 88.9%，进度汇报和佩戴适应追问都较明确。Emliy 李 主动回访 2 条，占 66.7%，Wuyingqi 单条记录主动率 100%。总体判断：今天未审订单已经全部清零，新口径下主动回访执行非常积极，下一步重点是把“主动服务截图”进一步沉淀为“图片加文字结论”的完整记录。"
+        ]
+      },
+      {
         date: "2026-06-01",
         updatedAt: "2026-06-01 09:05",
         headline: "今日四店 26 条已完成未审订单全部清零，21 条通过图片确认存在主动回访。",
