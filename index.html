@@ -519,6 +519,95 @@
     // Daily automation updates this REPORTS array. Newest report should stay first.
     const REPORTS = [
       {
+        date: "2026-06-03",
+        updatedAt: "2026-06-03 09:02",
+        headline: "今日四店 8 条已完成未审订单全部清零，6 条通过图片确认存在主动回访。",
+        summary: "本日覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店。共处理 8 条已完成未审核订单，全部因回访内容有文字备注或回访图片有图片而审核为一般；未发现文字和图片均为空的订单，四店回查剩余未审数为 0。按回访图片判定，主动询问佩戴舒适度、调整需求、佩戴问题处理，或主动报告加工、到货、质检进度的订单为 6 条，占 75.0%。",
+        totals: {
+          stores: 4,
+          orders: 8,
+          auditedGeneral: 8,
+          skipped: 0,
+          remaining: 0,
+          withText: 7,
+          withImages: 8,
+          both: 7,
+          imageOnly: 1,
+          textOnly: 0,
+          activeFollowups: 6
+        },
+        stores: [
+          {
+            name: "重庆星光68店",
+            total: 2,
+            auditedGeneral: 2,
+            skipped: 0,
+            withText: 1,
+            withImages: 2,
+            both: 1,
+            imageOnly: 1,
+            textOnly: 0,
+            activeFollowups: 2,
+            employees: [
+              { name: "Liuyan", total: 1, auditedGeneral: 1, both: 1, imageOnly: 0, textOnly: 0, activeFollowups: 1, skipped: 0, note: "单条记录图文齐全，主动查询并同步镜片加工进度，同时说明继续催单，主动回访率 100%。" },
+              { name: "Xuyanting", total: 1, auditedGeneral: 1, both: 0, imageOnly: 1, textOnly: 0, activeFollowups: 1, skipped: 0, note: "单条记录有图片留痕，主动询问更换镜片后的佩戴感受；建议补充文字备注。" }
+            ]
+          },
+          {
+            name: "深圳万象天地店",
+            total: 6,
+            auditedGeneral: 6,
+            skipped: 0,
+            withText: 6,
+            withImages: 6,
+            both: 6,
+            imageOnly: 0,
+            textOnly: 0,
+            activeFollowups: 4,
+            employees: [
+              { name: "ZhangShengLin", total: 6, auditedGeneral: 6, both: 6, imageOnly: 0, textOnly: 0, activeFollowups: 4, skipped: 0, note: "6 条全部图文齐全，主动回访 4 条，占 66.7%；主要围绕多副眼镜佩戴松紧度、清晰度和调整需求跟进。" }
+            ]
+          },
+          {
+            name: "成都银泰",
+            total: 0,
+            auditedGeneral: 0,
+            skipped: 0,
+            withText: 0,
+            withImages: 0,
+            both: 0,
+            imageOnly: 0,
+            textOnly: 0,
+            activeFollowups: 0,
+            employees: [
+              { name: "暂无待审员工", total: 0, auditedGeneral: 0, both: 0, imageOnly: 0, textOnly: 0, activeFollowups: 0, skipped: 0, note: "今日已完成未审订单为 0，回查无遗留。" }
+            ]
+          },
+          {
+            name: "北京中关村店",
+            total: 0,
+            auditedGeneral: 0,
+            skipped: 0,
+            withText: 0,
+            withImages: 0,
+            both: 0,
+            imageOnly: 0,
+            textOnly: 0,
+            activeFollowups: 0,
+            employees: [
+              { name: "暂无待审员工", total: 0, auditedGeneral: 0, both: 0, imageOnly: 0, textOnly: 0, activeFollowups: 0, skipped: 0, note: "今日已完成未审订单为 0，回查无遗留。" }
+            ]
+          }
+        ],
+        story: [
+          "本次审核继续覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店四家门店。按照规则逐条打开已完成且未审核订单详情，只要回访内容有文字备注，或回访图片有图片，即审核为一般；若两项都没有则跳过。今日共处理 8 条订单，8 条均有回访图片或文字备注并审核为一般，跳过 0 条，系统回查四店剩余未审数为 0。",
+          "基础留痕方面，今天 8 条订单全部有回访图片，其中 7 条同时有文字备注和图片，1 条仅有图片没有文字备注，未出现只有文字没有图片的记录。整体记录完整度较好，唯一的仅图片记录来自重庆星光68店 Xuyanting，截图能证明主动回访，但建议补充文字结论，减少管理层二次判断成本。",
+          "主动回访方面，按新口径把主动询问佩戴体验、处理佩戴问题，以及主动报告加工、到货、质检进度都纳入统计后，今日 6 条能从图片明确看到员工主动发起服务跟进，主动回访率为 75.0%。未计入主动回访的 2 条，一条主要是普通到店/地址类沟通，另一条是单独验光订单信息截图，没有明确体现佩戴体验追问或加工进度主动同步。",
+          "从门店看，重庆星光68店今日 2 条全部计入主动回访，主动率 100%，Liuyan 主动同步镜片加工进度并说明继续催单，Xuyanting 主动询问更换镜片后的佩戴感受。深圳万象天地店今日 6 条，主动回访 4 条，占 66.7%，ZhangShengLin 的有效回访主要围绕多副眼镜佩戴松紧度、镜片清晰度和后续调整需求。成都银泰和北京中关村店今日无新增已完成未审订单。",
+          "从员工看，Liuyan 和 Xuyanting 今日样本各 1 条，均符合主动回访口径。ZhangShengLin 今日承担主要数量，6 条中 4 条主动，基础图文留痕完整，但仍有 2 条未体现主动服务动作，后续对于普通调整、保养或单独验光类订单，建议在截图中补充明确的佩戴感受追问、调整需求确认，或加工/质检进度同步。总体判断：今天审核量较小，未审订单已清零，主动回访执行中等偏好，主要提升点是让非典型订单也形成清晰的主动服务闭环。"
+        ]
+      },
+      {
         date: "2026-06-02",
         updatedAt: "2026-06-02 09:06",
         headline: "今日四店 38 条已完成未审订单全部清零，35 条通过图片确认存在主动回访。",
