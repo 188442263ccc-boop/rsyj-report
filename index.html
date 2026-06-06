@@ -38,6 +38,108 @@
       color: var(--ink);
     }
 
+    body.locked .shell {
+      display: none;
+    }
+
+    .auth-screen {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 18px;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(23, 107, 84, 0.16), transparent 28%),
+        linear-gradient(90deg, rgba(23, 107, 84, 0.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(23, 107, 84, 0.07) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 34px 34px, 34px 34px;
+    }
+
+    .auth-screen[hidden] {
+      display: none;
+    }
+
+    .auth-card {
+      width: min(430px, 100%);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 5vw, 36px);
+    }
+
+    .auth-lock {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .auth-card h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .auth-note {
+      margin: 10px 0 24px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .auth-field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .auth-field label {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .auth-field input {
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0 12px;
+      color: var(--ink);
+      font-size: 15px;
+      background: #fff;
+    }
+
+    .auth-button {
+      width: 100%;
+      height: 44px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--green);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+
+    .auth-error {
+      min-height: 20px;
+      color: var(--coral);
+      font-size: 13px;
+      margin: 12px 0 0;
+    }
+
+    .auth-error[hidden] {
+      display: none;
+    }
+
     .shell {
       width: min(1240px, calc(100vw - 36px));
       margin: 0 auto;
@@ -442,7 +544,25 @@
     }
   </style>
 </head>
-<body>
+<body class="locked">
+  <section class="auth-screen" id="authScreen" aria-label="访问验证">
+    <form class="auth-card" id="authForm" autocomplete="off">
+      <div class="auth-lock" aria-hidden="true">锁</div>
+      <h2>回访日报访问验证</h2>
+      <p class="auth-note">请输入账号密码查看日报。验证通过后，本次浏览器会话内不再重复询问。</p>
+      <div class="auth-field">
+        <label for="authUser">账号</label>
+        <input id="authUser" name="username" type="text" inputmode="latin" autocomplete="username" required>
+      </div>
+      <div class="auth-field">
+        <label for="authPass">密码</label>
+        <input id="authPass" name="password" type="password" autocomplete="current-password" required>
+      </div>
+      <button class="auth-button" type="submit">进入日报</button>
+      <p class="auth-error" id="authError" hidden>账号或密码不正确</p>
+    </form>
+  </section>
+
   <main class="shell">
     <header class="topbar">
       <div class="brand">
@@ -514,6 +634,72 @@
     <section class="story-panel" id="storyPanel"></section>
 
   </main>
+
+  <script id="auth-gate">
+    (() => {
+      const AUTH_HASH = "97e1f2796d19da80";
+      const STORAGE_KEY = "rsyj-report-auth-ok";
+      const form = document.getElementById("authForm");
+      const userInput = document.getElementById("authUser");
+      const passInput = document.getElementById("authPass");
+      const error = document.getElementById("authError");
+      const screen = document.getElementById("authScreen");
+
+      function gateHash(value) {
+        let h1 = 0x811c9dc5;
+        let h2 = 0x9e3779b9;
+        for (let i = 0; i < value.length; i += 1) {
+          const code = value.charCodeAt(i);
+          h1 ^= code;
+          h1 = Math.imul(h1, 16777619);
+          h2 ^= code + i;
+          h2 = Math.imul(h2, 1597334677);
+        }
+        return `${(h1 >>> 0).toString(16).padStart(8, "0")}${(h2 >>> 0).toString(16).padStart(8, "0")}`;
+      }
+
+      function unlock() {
+        document.body.classList.remove("locked");
+        screen.hidden = true;
+      }
+
+      function storageGet() {
+        try {
+          return sessionStorage.getItem(STORAGE_KEY);
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function storageSet() {
+        try {
+          sessionStorage.setItem(STORAGE_KEY, "1");
+        } catch (error) {
+          // Some local file contexts block storage; login still works for this page view.
+        }
+      }
+
+      if (storageGet() === "1") {
+        unlock();
+      } else {
+        userInput.focus();
+      }
+
+      form.addEventListener("submit", event => {
+        event.preventDefault();
+        const user = userInput.value.trim().toLowerCase();
+        const pass = passInput.value;
+        if (gateHash(`${user}\u0000${pass}`) === AUTH_HASH) {
+          storageSet();
+          unlock();
+          return;
+        }
+        error.hidden = false;
+        passInput.value = "";
+        passInput.focus();
+      });
+    })();
+  </script>
 
   <script id="report-data">
     // Daily automation updates this REPORTS array. Newest report should stay first.
