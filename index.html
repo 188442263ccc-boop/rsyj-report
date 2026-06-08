@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -705,6 +704,211 @@
   <script id="report-data">
     // Daily automation updates this REPORTS array. Newest report should stay first.
     const REPORTS = [
+          {
+                "date": "2026-06-08",
+                "updatedAt": "2026-06-08 10:20",
+                "headline": "今日四店 173 条已完成未审订单全部清零，159 条通过图片确认存在主动回访。",
+                "summary": "本日覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店。共处理 173 条已完成未审核订单，全部因回访内容有文字备注或回访图片有图片而审核为一般；未发现文字和图片均为空的订单，四店回查剩余未审数为 0。按回访图片判定，主动询问佩戴舒适度、调整需求、佩戴问题处理，或主动报告加工、到货、质检进度的订单为 159 条，占 91.9%。",
+                "totals": {
+                      "stores": 4,
+                      "orders": 173,
+                      "auditedGeneral": 173,
+                      "skipped": 0,
+                      "remaining": 0,
+                      "withText": 145,
+                      "withImages": 173,
+                      "both": 145,
+                      "imageOnly": 28,
+                      "textOnly": 0,
+                      "activeFollowups": 159
+                },
+                "stores": [
+                      {
+                            "name": "重庆星光68店",
+                            "total": 81,
+                            "auditedGeneral": 81,
+                            "skipped": 0,
+                            "withText": 64,
+                            "withImages": 81,
+                            "both": 64,
+                            "imageOnly": 17,
+                            "textOnly": 0,
+                            "activeFollowups": 77,
+                            "employees": [
+                                  {
+                                        "name": "Liuyan",
+                                        "total": 35,
+                                        "auditedGeneral": 35,
+                                        "skipped": 0,
+                                        "both": 29,
+                                        "imageOnly": 6,
+                                        "textOnly": 0,
+                                        "activeFollowups": 33,
+                                        "note": "35 条中主动回访 33 条，占 94.3%；能覆盖佩戴感受、调整需求和寄出进度，但仍有 6 条仅图片，建议补充文字结论。"
+                                  },
+                                  {
+                                        "name": "ZhengWW",
+                                        "total": 28,
+                                        "auditedGeneral": 28,
+                                        "skipped": 0,
+                                        "both": 28,
+                                        "imageOnly": 0,
+                                        "textOnly": 0,
+                                        "activeFollowups": 27,
+                                        "note": "28 条全部图文齐全，主动回访 27 条，占 96.4%；售后处理、配件进度和佩戴问题跟进较完整。"
+                                  },
+                                  {
+                                        "name": "Xuyanting",
+                                        "total": 15,
+                                        "auditedGeneral": 15,
+                                        "skipped": 0,
+                                        "both": 4,
+                                        "imageOnly": 11,
+                                        "textOnly": 0,
+                                        "activeFollowups": 14,
+                                        "note": "15 条中主动回访 14 条，占 93.3%；主动动作充分，但 11 条仅图片，文字备注是主要短板。"
+                                  },
+                                  {
+                                        "name": "WangYiFeng",
+                                        "total": 3,
+                                        "auditedGeneral": 3,
+                                        "skipped": 0,
+                                        "both": 3,
+                                        "imageOnly": 0,
+                                        "textOnly": 0,
+                                        "activeFollowups": 3,
+                                        "note": "3 条全部图文齐全且全部主动，主动回访率 100%；样本较少但记录质量稳定。"
+                                  }
+                            ]
+                      },
+                      {
+                            "name": "深圳万象天地店",
+                            "total": 50,
+                            "auditedGeneral": 50,
+                            "skipped": 0,
+                            "withText": 43,
+                            "withImages": 50,
+                            "both": 43,
+                            "imageOnly": 7,
+                            "textOnly": 0,
+                            "activeFollowups": 43,
+                            "employees": [
+                                  {
+                                        "name": "ZhengPeiShan",
+                                        "total": 22,
+                                        "auditedGeneral": 22,
+                                        "skipped": 0,
+                                        "both": 15,
+                                        "imageOnly": 7,
+                                        "textOnly": 0,
+                                        "activeFollowups": 21,
+                                        "note": "22 条中主动回访 21 条，占 95.5%；佩戴关怀和进度同步表现好，7 条仅图片需要补文字。"
+                                  },
+                                  {
+                                        "name": "HongWeiPeng",
+                                        "total": 19,
+                                        "auditedGeneral": 19,
+                                        "skipped": 0,
+                                        "both": 19,
+                                        "imageOnly": 0,
+                                        "textOnly": 0,
+                                        "activeFollowups": 13,
+                                        "note": "19 条全部图文齐全，主动回访 13 条，占 68.4%；非主动项多为无需回访、上色或出货处理类记录。"
+                                  },
+                                  {
+                                        "name": "ZhangShengLin",
+                                        "total": 9,
+                                        "auditedGeneral": 9,
+                                        "skipped": 0,
+                                        "both": 9,
+                                        "imageOnly": 0,
+                                        "textOnly": 0,
+                                        "activeFollowups": 9,
+                                        "note": "9 条全部图文齐全且全部主动，主动回访率 100%；佩戴舒适度、镜框松紧和调整需求追问清楚。"
+                                  }
+                            ]
+                      },
+                      {
+                            "name": "成都银泰",
+                            "total": 42,
+                            "auditedGeneral": 42,
+                            "skipped": 0,
+                            "withText": 38,
+                            "withImages": 42,
+                            "both": 38,
+                            "imageOnly": 4,
+                            "textOnly": 0,
+                            "activeFollowups": 39,
+                            "employees": [
+                                  {
+                                        "name": "Whitney王",
+                                        "total": 21,
+                                        "auditedGeneral": 21,
+                                        "skipped": 0,
+                                        "both": 17,
+                                        "imageOnly": 4,
+                                        "textOnly": 0,
+                                        "activeFollowups": 19,
+                                        "note": "21 条中主动回访 19 条，占 90.5%；能覆盖复查训练、佩戴效果和进度沟通，4 条仅图片建议补文字。"
+                                  },
+                                  {
+                                        "name": "Wuyingqi",
+                                        "total": 14,
+                                        "auditedGeneral": 14,
+                                        "skipped": 0,
+                                        "both": 14,
+                                        "imageOnly": 0,
+                                        "textOnly": 0,
+                                        "activeFollowups": 14,
+                                        "note": "14 条全部图文齐全且全部主动，主动回访率 100%；佩戴问题追问和进度同步执行稳定。"
+                                  },
+                                  {
+                                        "name": "Emliy 李",
+                                        "total": 7,
+                                        "auditedGeneral": 7,
+                                        "skipped": 0,
+                                        "both": 7,
+                                        "imageOnly": 0,
+                                        "textOnly": 0,
+                                        "activeFollowups": 6,
+                                        "note": "7 条全部图文齐全，主动回访 6 条，占 85.7%；1 条为顾客先问进度后答复，按口径未计入主动。"
+                                  }
+                            ]
+                      },
+                      {
+                            "name": "北京中关村店",
+                            "total": 0,
+                            "auditedGeneral": 0,
+                            "skipped": 0,
+                            "withText": 0,
+                            "withImages": 0,
+                            "both": 0,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 0,
+                            "employees": [
+                                  {
+                                        "name": "暂无待审员工",
+                                        "total": 0,
+                                        "auditedGeneral": 0,
+                                        "both": 0,
+                                        "imageOnly": 0,
+                                        "textOnly": 0,
+                                        "activeFollowups": 0,
+                                        "skipped": 0,
+                                        "note": "今日已完成未审订单为 0，回查无遗留。"
+                                  }
+                            ]
+                      }
+                ],
+                "story": [
+                      "本次审核继续覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店四家门店。按照规则逐条打开已完成且未审核订单详情，只要回访内容有文字备注，或回访图片有图片，即审核为一般；若两项都没有则跳过。今日共处理 173 条订单，173 条均有回访图片或文字备注并审核为一般，跳过 0 条，系统回查四店剩余未审数为 0。",
+                      "基础留痕方面，今天 173 条订单全部有回访图片，其中 145 条同时有文字备注和图片，28 条仅有图片没有文字备注，未出现只有文字没有图片的记录。整体凭证上传完整，空白回访为 0；文字备注短板主要集中在重庆星光68店 Xuyanting 的 11 条仅图片、深圳万象天地店 ZhengPeiShan 的 7 条仅图片，以及重庆星光68店 Liuyan 的 6 条仅图片。",
+                      "主动回访方面，按当前口径把主动询问佩戴体验、处理佩戴问题，以及主动报告加工、到货、质检、加工完成和取镜前准备进度都纳入统计后，今日 159 条能从图片明确看到员工主动发起服务跟进，主动回访率为 91.9%。未计入主动回访的 14 条，主要是普通取镜或地址沟通、顾客先主动询问进度后员工答复、特殊顾客无需回访、上色/出货/维修/赠品类非典型订单，以及仅有产品或资料截图的记录。",
+                      "从门店看，重庆星光68店今日处理量最大，共 81 条，主动回访 77 条，占 95.1%，整体主动服务最充分；其中 ZhengWW 图文完整度最好，Liuyan 数量最高，Xuyanting 主动率高但文字备注不足。深圳万象天地店共 50 条，主动回访 43 条，占 86.0%，ZhangShengLin 9 条全部主动，ZhengPeiShan 主动率 95.5%，HongWeiPeng 的非主动项主要来自无需回访或出货处理类记录。成都银泰共 42 条，主动回访 39 条，占 92.9%，Wuyingqi 14 条全部主动，Whitney王 数量较高且主动率 90.5%，Emliy 李 主要问题是个别顾客先问进度后再答复，不按主动口径计入。北京中关村店今日无新增已完成未审订单。",
+                      "从员工看，Wuyingqi、ZhangShengLin、WangYiFeng 今日主动回访率均为 100%，且图文记录完整；ZhengWW、ZhengPeiShan、Liuyan、Xuyanting、Whitney王 主动率均在 90% 以上，说明主动服务动作执行较强。需要关注的是 HongWeiPeng 的主动率为 68.4%，虽然图文齐全，但非典型订单较多，后续可在不适合回访的订单中写明“不回访原因”；同时 Xuyanting、ZhengPeiShan、Liuyan 的仅图片记录建议补充一句文字结论，方便老板快速判断服务结果。总体判断：今天未审订单已全部清零，主动回访执行质量高，下一步重点是减少仅图片留痕和把无需回访类订单说明写清楚。"
+                ]
+          },
           {
                 "date": "2026-06-05",
                 "updatedAt": "2026-06-05 09:07",
