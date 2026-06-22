@@ -705,6 +705,573 @@
     // Daily automation updates this REPORTS array. Newest report should stay first.
     const REPORTS = [
         {
+            "date": "2026-06-22",
+            "updatedAt": "2026-06-22 09:00",
+            "headline": "今日四店处理 69 条已完成未审订单，65 条审核为一般，主动回访 59 条。",
+            "summary": "本日覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店。共处理 69 条已完成未审核订单，65 条因回访内容有文字备注或回访图片有图片而审核为一般；4 条因回访内容和回访图片均为空被跳过，四店回查剩余未审数为 4。按回访图片判定，主动询问佩戴舒适度、调整需求、佩戴问题处理，主动报告加工/到货/质检/完成进度，或主动进行客户关怀的订单为 59 条，占 85.5%。",
+            "totals": {
+                "stores": 4,
+                "orders": 69,
+                "auditedGeneral": 65,
+                "skipped": 4,
+                "remaining": 4,
+                "withText": 65,
+                "withImages": 65,
+                "both": 65,
+                "imageOnly": 0,
+                "textOnly": 0,
+                "activeFollowups": 59
+            },
+            "stores": [
+                {
+                    "name": "重庆星光68店",
+                    "total": 17,
+                    "auditedGeneral": 17,
+                    "skipped": 0,
+                    "withText": 17,
+                    "withImages": 17,
+                    "both": 17,
+                    "imageOnly": 0,
+                    "textOnly": 0,
+                    "activeFollowups": 17,
+                    "employees": [
+                        {
+                            "name": "Xuyanting",
+                            "total": 12,
+                            "auditedGeneral": 12,
+                            "skipped": 0,
+                            "withText": 12,
+                            "withImages": 12,
+                            "both": 12,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 12,
+                            "note": "12 条订单，审核 12 条，跳过 0 条；主动回访 12 条，主动率 100.0%。主动回访执行稳定。图文留痕完整。12 条全部主动，覆盖定期回访、渐进适应、下滑调整、售后配件和到货进度，图文留痕完整。"
+                        },
+                        {
+                            "name": "WangYiFeng",
+                            "total": 5,
+                            "auditedGeneral": 5,
+                            "skipped": 0,
+                            "withText": 5,
+                            "withImages": 5,
+                            "both": 5,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 5,
+                            "note": "5 条订单，审核 5 条，跳过 0 条；主动回访 5 条，主动率 100.0%。主动回访执行稳定。图文留痕完整。5 条全部主动，包含小朋友防控复查提醒、度数适应、双眼调节和佩戴问题跟进。"
+                        }
+                    ]
+                },
+                {
+                    "name": "深圳万象天地店",
+                    "total": 28,
+                    "auditedGeneral": 27,
+                    "skipped": 1,
+                    "withText": 27,
+                    "withImages": 27,
+                    "both": 27,
+                    "imageOnly": 0,
+                    "textOnly": 0,
+                    "activeFollowups": 25,
+                    "employees": [
+                        {
+                            "name": "HongWeiPeng",
+                            "total": 18,
+                            "auditedGeneral": 18,
+                            "skipped": 0,
+                            "withText": 18,
+                            "withImages": 18,
+                            "both": 18,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 16,
+                            "note": "18 条订单，审核 18 条，跳过 0 条；主动回访 16 条，主动率 88.9%。主动回访有基础，但仍有非回访或证据不足订单。图文留痕完整。18 条中 16 条主动，主要是佩戴舒适度、松紧调整、复查预约、加工寄出和到店进度；王文军只上色、滕佳男未取镜且无有效截图未计主动。"
+                        },
+                        {
+                            "name": "ZhengPeiShan",
+                            "total": 10,
+                            "auditedGeneral": 9,
+                            "skipped": 1,
+                            "withText": 9,
+                            "withImages": 9,
+                            "both": 9,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 9,
+                            "note": "10 条订单，审核 9 条，跳过 1 条；主动回访 9 条，主动率 90.0%。主动回访执行稳定。1 条图文均空被跳过，需补录回访内容或图片。10 条中 9 条主动，包含牛角保养、配件更换、夏季下滑、夹头和松紧跟进；贺知一单图文空跳过。"
+                        }
+                    ]
+                },
+                {
+                    "name": "成都银泰",
+                    "total": 14,
+                    "auditedGeneral": 11,
+                    "skipped": 3,
+                    "withText": 11,
+                    "withImages": 11,
+                    "both": 11,
+                    "imageOnly": 0,
+                    "textOnly": 0,
+                    "activeFollowups": 10,
+                    "employees": [
+                        {
+                            "name": "Emliy 李",
+                            "total": 9,
+                            "auditedGeneral": 9,
+                            "skipped": 0,
+                            "withText": 9,
+                            "withImages": 9,
+                            "both": 9,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 8,
+                            "note": "9 条订单，审核 9 条，跳过 0 条；主动回访 8 条，主动率 88.9%。主动回访有基础，但仍有非回访或证据不足订单。图文留痕完整。9 条中 8 条主动，主要是佩戴无问题回访、清晰度不适处理、棱镜/集合训练说明；彭先生平光骑行镜送人订单未计主动。"
+                        },
+                        {
+                            "name": "Wuyingqi",
+                            "total": 3,
+                            "auditedGeneral": 2,
+                            "skipped": 1,
+                            "withText": 2,
+                            "withImages": 2,
+                            "both": 2,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 2,
+                            "note": "3 条订单，审核 2 条，跳过 1 条；主动回访 2 条，主动率 66.7%。主动回访有基础，但仍有非回访或证据不足订单。1 条图文均空被跳过，需补录回访内容或图片。3 条中 2 条主动，周先生和李波均有佩戴舒适度关怀；黄锦程一单图文空跳过。"
+                        },
+                        {
+                            "name": "Whitney王",
+                            "total": 2,
+                            "auditedGeneral": 0,
+                            "skipped": 2,
+                            "withText": 0,
+                            "withImages": 0,
+                            "both": 0,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 0,
+                            "note": "2 条订单，审核 0 条，跳过 2 条；主动回访 0 条，主动率 0.0%。主动回访偏低，需要优先补齐真实关怀或进度跟进。2 条图文均空被跳过，需补录回访内容或图片。2 条历史空记录继续跳过。"
+                        }
+                    ]
+                },
+                {
+                    "name": "北京中关村店",
+                    "total": 10,
+                    "auditedGeneral": 10,
+                    "skipped": 0,
+                    "withText": 10,
+                    "withImages": 10,
+                    "both": 10,
+                    "imageOnly": 0,
+                    "textOnly": 0,
+                    "activeFollowups": 7,
+                    "employees": [
+                        {
+                            "name": "Xiejs",
+                            "total": 10,
+                            "auditedGeneral": 10,
+                            "skipped": 0,
+                            "withText": 10,
+                            "withImages": 10,
+                            "both": 10,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 7,
+                            "note": "10 条订单，审核 10 条，跳过 0 条；主动回访 7 条，主动率 70.0%。主动回访有基础，但仍有非回访或证据不足订单。图文留痕完整。10 条中 7 条主动，报进度、签收后体验、调整到店和镜架调货记录较清楚；单独夹片、联系不到本人和口头回访无图片证据的订单未计主动。"
+                        }
+                    ]
+                }
+            ],
+            "story": [
+                "今日四店共处理 69 条已完成未审订单，审核为一般 65 条，跳过 4 条，剩余未审 4 条。图文留痕方面，有图片 65 条，有文字备注 65 条，图文齐全 65 条；今天没有仅图片无文字备注订单，留痕完整度较好。",
+                "主动回访共 59 条，整体主动率 85.5%。重庆星光68店 17 条全部主动，执行最好；深圳万象天地店 28 条中 25 条主动，是今日主力；成都银泰 14 条中 10 条主动，空记录仍需处理；北京中关村店 10 条中 7 条主动。",
+                "重庆星光68店方面，Xuyanting 12 条全部主动，覆盖定期回访、渐进适应、下滑调整、售后配件和到货进度；WangYiFeng 5 条全部主动，包含小朋友防控复查提醒、度数适应和佩戴问题跟进。",
+                "深圳万象天地店方面，HongWeiPeng 18 条中 16 条主动，佩戴舒适度、松紧调整、复查预约、加工寄出和到店进度较清楚；ZhengPeiShan 10 条中 9 条主动，牛角保养、配件更换、夏季下滑和夹头跟进较完整；王文军只上色、滕佳男未取镜无有效截图、贺知空记录是主要扣分项。",
+                "成都银泰方面，Emliy 李 9 条中 8 条主动，佩戴无问题回访、清晰度不适处理和棱镜/集合训练说明较完整；Wuyingqi 3 条中 2 条主动；Whitney王 两条历史空记录继续跳过。成都今日需优先补黄锦程、罗嘉妍、拉桑等空记录。",
+                "北京中关村店由 Xiejs 完成 10 条，7 条主动，报进度、签收体验、调整到店和镜架调货记录较清楚；单独夹片、联系不到本人和口头回访无图片证据的订单未计主动。"
+            ]
+        },
+        {
+            "date": "2026-06-21",
+            "updatedAt": "2026-06-21 09:00",
+            "headline": "今日四店处理 39 条已完成未审订单，37 条审核为一般，主动回访 35 条。",
+            "summary": "本日覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店。共处理 39 条已完成未审核订单，37 条因回访内容有文字备注或回访图片有图片而审核为一般；2 条因回访内容和回访图片均为空被跳过，四店回查剩余未审数为 2。按回访图片判定，主动询问佩戴舒适度、调整需求、佩戴问题处理，主动报告加工/到货/质检/完成进度，或主动进行客户关怀的订单为 35 条，占 89.7%。",
+            "totals": {
+                "stores": 4,
+                "orders": 39,
+                "auditedGeneral": 37,
+                "skipped": 2,
+                "remaining": 2,
+                "withText": 34,
+                "withImages": 37,
+                "both": 34,
+                "imageOnly": 3,
+                "textOnly": 0,
+                "activeFollowups": 35
+            },
+            "stores": [
+                {
+                    "name": "重庆星光68店",
+                    "total": 0,
+                    "auditedGeneral": 0,
+                    "skipped": 0,
+                    "withText": 0,
+                    "withImages": 0,
+                    "both": 0,
+                    "imageOnly": 0,
+                    "textOnly": 0,
+                    "activeFollowups": 0,
+                    "employees": [
+                        {
+                            "name": "无新增订单",
+                            "total": 0,
+                            "auditedGeneral": 0,
+                            "skipped": 0,
+                            "withText": 0,
+                            "withImages": 0,
+                            "both": 0,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 0,
+                            "note": "今日无待审订单。"
+                        }
+                    ]
+                },
+                {
+                    "name": "深圳万象天地店",
+                    "total": 29,
+                    "auditedGeneral": 29,
+                    "skipped": 0,
+                    "withText": 26,
+                    "withImages": 29,
+                    "both": 26,
+                    "imageOnly": 3,
+                    "textOnly": 0,
+                    "activeFollowups": 28,
+                    "employees": [
+                        {
+                            "name": "ZhengPeiShan",
+                            "total": 13,
+                            "auditedGeneral": 13,
+                            "skipped": 0,
+                            "withText": 10,
+                            "withImages": 13,
+                            "both": 10,
+                            "imageOnly": 3,
+                            "textOnly": 0,
+                            "activeFollowups": 13,
+                            "note": "13 条订单，审核 13 条，跳过 0 条；主动回访 13 条，主动率 100.0%。主动回访执行稳定。3 条仅图片无文字备注，建议补简短结论。13 条全部计入主动，包含到货/质检通知、适应不适跟进、夏季下滑松紧回访和夹头调整提醒；3 条仅图片无文字备注，建议补结论。"
+                        },
+                        {
+                            "name": "ZhangShengLin",
+                            "total": 10,
+                            "auditedGeneral": 10,
+                            "skipped": 0,
+                            "withText": 10,
+                            "withImages": 10,
+                            "both": 10,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 9,
+                            "note": "10 条订单，审核 10 条，跳过 0 条；主动回访 9 条，主动率 90.0%。主动回访执行稳定。图文留痕完整。10 条中 9 条主动，主要为佩戴一段时间后的清晰度、松紧、适应度回访及加工进度同步；何志强订单图片证据不足未计主动。"
+                        },
+                        {
+                            "name": "HongWeiPeng",
+                            "total": 6,
+                            "auditedGeneral": 6,
+                            "skipped": 0,
+                            "withText": 6,
+                            "withImages": 6,
+                            "both": 6,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 6,
+                            "note": "6 条订单，审核 6 条，跳过 0 条；主动回访 6 条，主动率 100.0%。主动回访执行稳定。图文留痕完整。6 条全部主动，包含佩戴舒适度回访、镜片缺货升级处理、加工/取镜/验光定位进度。"
+                        }
+                    ]
+                },
+                {
+                    "name": "成都银泰",
+                    "total": 8,
+                    "auditedGeneral": 6,
+                    "skipped": 2,
+                    "withText": 6,
+                    "withImages": 6,
+                    "both": 6,
+                    "imageOnly": 0,
+                    "textOnly": 0,
+                    "activeFollowups": 5,
+                    "employees": [
+                        {
+                            "name": "Wuyingqi",
+                            "total": 4,
+                            "auditedGeneral": 4,
+                            "skipped": 0,
+                            "withText": 4,
+                            "withImages": 4,
+                            "both": 4,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 4,
+                            "note": "4 条订单，审核 4 条，跳过 0 条；主动回访 4 条，主动率 100.0%。主动回访执行稳定。图文留痕完整。4 条全部主动，包含渐进佩戴提醒、配件更换、牛角保养和收货关怀。"
+                        },
+                        {
+                            "name": "Emliy 李",
+                            "total": 2,
+                            "auditedGeneral": 2,
+                            "skipped": 0,
+                            "withText": 2,
+                            "withImages": 2,
+                            "both": 2,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 1,
+                            "note": "2 条订单，审核 2 条，跳过 0 条；主动回访 1 条，主动率 50.0%。主动回访偏低，需要优先补齐真实关怀或进度跟进。图文留痕完整。2 条中 1 条主动，陶潜单镜架送人仍有收货和松紧关怀；彭先生平光骑行镜订单只有详情图，未计主动。"
+                        },
+                        {
+                            "name": "Whitney王",
+                            "total": 2,
+                            "auditedGeneral": 0,
+                            "skipped": 2,
+                            "withText": 0,
+                            "withImages": 0,
+                            "both": 0,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 0,
+                            "note": "2 条订单，审核 0 条，跳过 2 条；主动回访 0 条，主动率 0.0%。主动回访偏低，需要优先补齐真实关怀或进度跟进。2 条图文均空被跳过，需补录回访内容或图片。2 条历史空记录仍图文均空，继续跳过。"
+                        }
+                    ]
+                },
+                {
+                    "name": "北京中关村店",
+                    "total": 2,
+                    "auditedGeneral": 2,
+                    "skipped": 0,
+                    "withText": 2,
+                    "withImages": 2,
+                    "both": 2,
+                    "imageOnly": 0,
+                    "textOnly": 0,
+                    "activeFollowups": 2,
+                    "employees": [
+                        {
+                            "name": "Chenlx",
+                            "total": 2,
+                            "auditedGeneral": 2,
+                            "skipped": 0,
+                            "withText": 2,
+                            "withImages": 2,
+                            "both": 2,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 2,
+                            "note": "2 条订单，审核 2 条，跳过 0 条；主动回访 2 条，主动率 100.0%。主动回访执行稳定。图文留痕完整。2 条全部主动，包含变色片佩戴体验询问和镜片到国内后的进度同步。"
+                        }
+                    ]
+                }
+            ],
+            "story": [
+                "今日四店共处理 39 条已完成未审订单，审核为一般 37 条，跳过 2 条，剩余未审 2 条。图文留痕方面，有图片 37 条，有文字备注 34 条，图文齐全 34 条；仅图片无文字备注 3 条，主要来自深圳，建议补一句回访结论。",
+                "主动回访共 35 条，整体主动率 89.7%。深圳万象天地店今日处理 29 条、主动 28 条，是主力门店；成都银泰 8 条中主动 5 条，主要问题仍是 Whitney王 两条历史空记录；北京 2 条全部主动；重庆今日无新增待审订单。",
+                "深圳员工层面，ZhengPeiShan 13 条全部主动，覆盖到货/质检通知、适应不适跟进、夏季下滑松紧回访和夹头调整提醒；ZhangShengLin 10 条中 9 条主动，何志强订单证据不足未计主动；HongWeiPeng 6 条全部主动，进度和关怀记录较清楚。",
+                "成都方面，Wuyingqi 4 条全部主动，包含渐进佩戴提醒、配件更换、牛角保养和收货关怀；Emliy 李 2 条中 1 条主动，陶潜单镜架有收货和松紧关怀，彭先生平光骑行镜只有订单详情图未计主动；Whitney王 两条图文均空继续跳过。",
+                "北京中关村店由 Chenlx 完成 2 条，全部计入主动，分别是变色片佩戴体验询问和镜片到国内后的进度同步。",
+                "整体看，6月21日审核质量较稳定，核心改进点是深圳少数仅图片订单补文字结论、ZhangShengLin 证据不足订单补截图，以及成都 Whitney王 继续补齐罗嘉妍、拉桑两条空记录。"
+            ]
+        },
+        {
+            "date": "2026-06-20",
+            "updatedAt": "2026-06-20 09:00",
+            "headline": "今日四店处理 91 条已完成未审订单，89 条审核为一般，主动回访 80 条。",
+            "summary": "本日覆盖重庆星光68店、深圳万象天地店、成都银泰、北京中关村店。共处理 91 条已完成未审核订单，89 条因回访内容有文字备注或回访图片有图片而审核为一般；2 条因回访内容和回访图片均为空被跳过，四店回查剩余未审数为 2。按回访图片判定，主动询问佩戴舒适度、调整需求、佩戴问题处理，主动报告加工/到货/质检/完成进度，或主动进行客户关怀的订单为 80 条，占 87.9%。",
+            "totals": {
+                "stores": 4,
+                "orders": 91,
+                "auditedGeneral": 89,
+                "skipped": 2,
+                "remaining": 2,
+                "withText": 82,
+                "withImages": 89,
+                "both": 82,
+                "imageOnly": 7,
+                "textOnly": 0,
+                "activeFollowups": 80
+            },
+            "stores": [
+                {
+                    "name": "重庆星光68店",
+                    "total": 51,
+                    "auditedGeneral": 51,
+                    "skipped": 0,
+                    "withText": 48,
+                    "withImages": 51,
+                    "both": 48,
+                    "imageOnly": 3,
+                    "textOnly": 0,
+                    "activeFollowups": 49,
+                    "employees": [
+                        {
+                            "name": "ZhengWW",
+                            "total": 37,
+                            "auditedGeneral": 37,
+                            "skipped": 0,
+                            "withText": 37,
+                            "withImages": 37,
+                            "both": 37,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 35,
+                            "note": "37 条订单，审核 37 条，跳过 0 条；主动回访 35 条，主动率 94.6%。主动回访执行稳定。图文留痕完整。37 条中 35 条主动，主要是端午期间集中做三个月/九个月回访、佩戴问题确认、保养提醒和加工进度同步；镜盒订单和店内陈列改片型未计主动。"
+                        },
+                        {
+                            "name": "Xuyanting",
+                            "total": 13,
+                            "auditedGeneral": 13,
+                            "skipped": 0,
+                            "withText": 10,
+                            "withImages": 13,
+                            "both": 10,
+                            "imageOnly": 3,
+                            "textOnly": 0,
+                            "activeFollowups": 13,
+                            "note": "13 条订单，审核 13 条，跳过 0 条；主动回访 13 条，主动率 100.0%。主动回访执行稳定。3 条仅图片无文字备注，建议补简短结论。13 条全部主动，包含夹头调整、佩戴感受、配件更换、加工/质检/发出进度；3 条仅图片无文字备注，建议补结论。"
+                        },
+                        {
+                            "name": "Liuyan",
+                            "total": 1,
+                            "auditedGeneral": 1,
+                            "skipped": 0,
+                            "withText": 1,
+                            "withImages": 1,
+                            "both": 1,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 1,
+                            "note": "1 条订单，审核 1 条，跳过 0 条；主动回访 1 条，主动率 100.0%。主动回访执行稳定。图文留痕完整。1 条主动回访，佩戴及调整提醒明确。"
+                        }
+                    ]
+                },
+                {
+                    "name": "深圳万象天地店",
+                    "total": 3,
+                    "auditedGeneral": 3,
+                    "skipped": 0,
+                    "withText": 3,
+                    "withImages": 3,
+                    "both": 3,
+                    "imageOnly": 0,
+                    "textOnly": 0,
+                    "activeFollowups": 3,
+                    "employees": [
+                        {
+                            "name": "ZhangShengLin",
+                            "total": 3,
+                            "auditedGeneral": 3,
+                            "skipped": 0,
+                            "withText": 3,
+                            "withImages": 3,
+                            "both": 3,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 3,
+                            "note": "3 条订单，审核 3 条，跳过 0 条；主动回访 3 条，主动率 100.0%。主动回访执行稳定。图文留痕完整。3 条全部主动，覆盖佩戴清晰度/适应确认和加工、质检、到店进度。"
+                        }
+                    ]
+                },
+                {
+                    "name": "成都银泰",
+                    "total": 35,
+                    "auditedGeneral": 33,
+                    "skipped": 2,
+                    "withText": 29,
+                    "withImages": 33,
+                    "both": 29,
+                    "imageOnly": 4,
+                    "textOnly": 0,
+                    "activeFollowups": 27,
+                    "employees": [
+                        {
+                            "name": "Whitney王",
+                            "total": 18,
+                            "auditedGeneral": 16,
+                            "skipped": 2,
+                            "withText": 13,
+                            "withImages": 16,
+                            "both": 13,
+                            "imageOnly": 3,
+                            "textOnly": 0,
+                            "activeFollowups": 11,
+                            "note": "18 条订单，审核 16 条，跳过 2 条；主动回访 11 条，主动率 61.1%。主动回访有基础，但仍有非回访或证据不足订单。2 条图文均空被跳过，需补录回访内容或图片；3 条仅图片无文字备注，建议补简短结论。18 条中 11 条主动，主动单包含镜腿/鼻托调整、进度同步、夏季下滑提醒、佩戴反馈；2 条图文空跳过，另有单镜框/镜框特殊/证据不清订单未计主动。"
+                        },
+                        {
+                            "name": "Wuyingqi",
+                            "total": 14,
+                            "auditedGeneral": 14,
+                            "skipped": 0,
+                            "withText": 13,
+                            "withImages": 14,
+                            "both": 13,
+                            "imageOnly": 1,
+                            "textOnly": 0,
+                            "activeFollowups": 13,
+                            "note": "14 条订单，审核 14 条，跳过 0 条；主动回访 13 条，主动率 92.9%。主动回访执行稳定。1 条仅图片无文字备注，建议补简短结论。14 条中 13 条主动，覆盖小训练、佩戴反馈、报进度、到店/取镜提醒；白春露单镜架到店沟通未计主动。"
+                        },
+                        {
+                            "name": "Emliy 李",
+                            "total": 3,
+                            "auditedGeneral": 3,
+                            "skipped": 0,
+                            "withText": 3,
+                            "withImages": 3,
+                            "both": 3,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 3,
+                            "note": "3 条订单，审核 3 条，跳过 0 条；主动回访 3 条，主动率 100.0%。主动回访执行稳定。图文留痕完整。3 条全部主动，包含镜片/镜框到加工室进度和渐进佩戴适应回访。"
+                        }
+                    ]
+                },
+                {
+                    "name": "北京中关村店",
+                    "total": 2,
+                    "auditedGeneral": 2,
+                    "skipped": 0,
+                    "withText": 2,
+                    "withImages": 2,
+                    "both": 2,
+                    "imageOnly": 0,
+                    "textOnly": 0,
+                    "activeFollowups": 1,
+                    "employees": [
+                        {
+                            "name": "Xiejs",
+                            "total": 2,
+                            "auditedGeneral": 2,
+                            "skipped": 0,
+                            "withText": 2,
+                            "withImages": 2,
+                            "both": 2,
+                            "imageOnly": 0,
+                            "textOnly": 0,
+                            "activeFollowups": 1,
+                            "note": "2 条订单，审核 2 条，跳过 0 条；主动回访 1 条，主动率 50.0%。主动回访偏低，需要优先补齐真实关怀或进度跟进。图文留痕完整。2 条中 1 条主动，郭馨锴进度同步清楚；田越为单独购买镜框不回访，未计主动。"
+                        }
+                    ]
+                }
+            ],
+            "story": [
+                "今日四店共处理 91 条已完成未审订单，审核为一般 89 条，跳过 2 条，四店剩余未审 2 条。图文留痕方面，有图片 89 条，有文字备注 82 条，图文齐全 82 条；仅图片无文字备注 7 条，集中在重庆和成都，建议补简短回访结论。",
+                "主动回访共 80 条，整体主动率 87.9%。重庆星光68店处理 51 条、主动 49 条，是今日主力；成都银泰处理 35 条、主动 27 条，数量较大但非标准订单和空记录较多；深圳 3 条全部主动；北京 2 条中 1 条主动。",
+                "重庆星光68店方面，ZhengWW 37 条中 35 条主动，主要是端午期间集中做三个月/九个月回访、佩戴问题确认、保养提醒和加工进度同步；Xuyanting 13 条全部主动，能看到夹头调整、佩戴感受、配件更换和加工/质检进度；Liuyan 1 条主动。重庆今日整体执行强，但仍有 6 条仅图片无文字备注。",
+                "成都银泰方面，Wuyingqi 14 条中 13 条主动，覆盖小训练、佩戴反馈、报进度、到店/取镜提醒；Emliy 李 3 条全部主动，进度和渐进适应回访清楚。Whitney王 18 条中主动 11 条，2 条图文空跳过，另有单镜框、特殊镜框或证据不清订单未计主动，是成都今日主要短板。",
+                "深圳万象天地店由 ZhangShengLin 完成 3 条，全部主动，能看到佩戴清晰度/适应确认和加工、质检、到店进度。北京中关村店由 Xiejs 完成 2 条，郭馨锴进度同步清楚，田越单独购买镜框不回访未计主动。",
+                "整体看，今日审核量较大但已清理到位。后续重点是要求成都 Whitney王 补齐罗嘉妍、拉桑两条空记录，并把单镜框、镜盒、陈列改片型等非标准订单在备注里明确分类；重庆和成都的仅图片订单也要补一句文字结论，方便老板复盘。"
+            ]
+        },
+        {
             "date": "2026-06-19",
             "updatedAt": "2026-06-19 09:00",
             "headline": "今日四店处理 45 条已完成未审订单，45 条审核为一般，主动回访 43 条。",
